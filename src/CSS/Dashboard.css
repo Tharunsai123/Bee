@@ -1,0 +1,299 @@
+/* Dashboard.css */
+
+/* CSS Variables */
+:root {
+  --primary-color: #ffcc00;     /* Bright yellow */
+  --secondary-color: #000000;   /* Black */
+  --background-color: #F8ED8C;  /* Light yellow */
+  --text-color: #000000;        /* Black text */
+  --chart-background: rgba(255, 255, 255, 0.7);
+  --hover-color: #ffd633;       /* Lighter yellow for hover effects */
+  --critical-color: #d32f2f;    /* Red for critical status */
+  --warning-color: #ff9800;     /* Orange for warning status */
+  --healthy-color: #4caf50;     /* Green for healthy status */
+}
+
+/* Global Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* Dashboard Grid Layout */
+.dashboard-grid {
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  gap: 20px;
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Header Styles */
+.dashboard-header {
+  text-align: center;
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.dashboard-header h1 {
+  color: var(--secondary-color);
+  font-size: 2.5rem;
+}
+
+/* Parameters Section */
+.dashboard-parameters {
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.sensor-boxes {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.sensor-box {
+  flex: 1;
+  min-width: 150px;
+  max-width: 200px;
+  background-color: white;
+  border: 2px solid var(--primary-color);
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  height: 120px;
+}
+
+.sensor-box p {
+  margin-bottom: 10px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.sensor-box h3 {
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+}
+
+.sensor-box p span {
+  margin-right: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.sensor-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.sensor-box.selected {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+/* Second Row - Chart and Map */
+.dashboard-second-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.dashboard-chart,
+.dashboard-map {
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.chart-container {
+  height: 300px;
+}
+
+.map {
+  height: 300px;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.fullmap-button {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 10px;
+}
+
+.fullmap-button:hover {
+  background-color: var(--hover-color);
+}
+
+/* Third Row - Additional Information */
+.dashboard-third-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.dashboard-hive-status,
+.dashboard-predictive-analytics,
+.dashboard-weather,
+.dashboard-export {
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+/* Status Indicators */
+.critical { 
+  color: var(--critical-color) !important; 
+}
+
+.warning { 
+  color: var(--warning-color) !important; 
+}
+
+.healthy { 
+  color: var(--healthy-color) !important; 
+}
+
+/* Export Buttons */
+.export-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.export-buttons button {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.export-buttons button:hover {
+  background-color: var(--hover-color);
+}
+
+/* Headings and Text */
+h1, h2 {
+  color: var(--secondary-color);
+  margin-bottom: 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .dashboard-second-row {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-third-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sensor-boxes {
+    justify-content: center;
+  }
+
+  .sensor-box {
+    flex-basis: calc(50% - 15px);
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-grid {
+    padding: 10px;
+  }
+
+  .dashboard-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .dashboard-third-row {
+    grid-template-columns: 1fr;
+  }
+
+  .sensor-boxes {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .sensor-box {
+    width: 100%;
+    max-width: 100%;
+    flex-basis: auto;
+  }
+
+  .chart-container,
+  .map {
+    height: 250px;
+  }
+}
+
+/* Ensure all text is black */
+body, 
+h1, h2, h3, h4, h5, h6,
+p, 
+a, 
+li, 
+span, 
+div {
+  color: var(--secondary-color) !important;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--hover-color);
+}

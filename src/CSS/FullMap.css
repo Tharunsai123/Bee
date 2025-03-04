@@ -1,0 +1,58 @@
+.fullmap-container {
+  text-align: center;
+  padding: 20px;
+  background-color: #f5f5f5;
+}
+
+.title {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 10px;
+  max-width: 600px;
+  margin: 0 auto 20px;
+}
+
+.grid-box {
+  padding: 10px;
+  background-color: #ffcc00;
+  color: black;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 8px;
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.grid-box:hover {
+  transform: scale(1.1);
+  background-color: #ffaa00;
+  color: black;  /* Ensures text remains black on hover */
+}
+
+
+.hive-details {
+  padding: 15px;
+  background: white;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin: 10px auto;
+  width: 300px;
+}
+
+.hive-details p{
+  color: black;
+}
+
+.full-map {
+  height: 500px;
+  width: 80%;
+  margin: 20px auto;
+  border-radius: 10px;
+  overflow: hidden;
+}

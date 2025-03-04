@@ -1,0 +1,110 @@
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    height: 50px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: whitesmoke; /* Bee yellow */
+    color: #000814;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden; /* Prevents bee overflow */
+}
+
+/* Logo */
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: black;
+}
+
+/* Navigation Links */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    font-size: 16px;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #001D3D;
+    font-weight: bold;
+    padding: 8px 12px;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+}
+
+/* Hover Effect */
+.nav-links a:hover {
+    background: #FFC300;
+    color: #000;
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 10px;
+        background: #FFD60A;
+        width: 200px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .nav-links li {
+        padding: 10px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+}
+
+/* Animated Bee */
+.bee {
+    position: absolute;
+    top: 50%;
+    left: -50px; /* Start from outside the left */
+    font-size: 60px; /* Emoji size */
+    transform: translateY(-50%) scaleX(-1); /* Flip for correct direction */
+    animation: moveBee 5s linear infinite, floatBee 1.5s ease-in-out infinite;
+}
+
+/* Moves the bee from left to right */
+@keyframes moveBee {
+    0% {
+        left: -50px;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+/* Floating effect (like Colab animals) */
+@keyframes floatBee {
+    0%, 100% {
+        transform: translateY(-50%) scaleX(-1) translateY(-5px);
+    }
+    50% {
+        transform: translateY(-50%) scaleX(-1) translateY(5px);
+    }
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-image {
+    height: 40px; /* Adjust size as needed */
+    width: auto;
+}

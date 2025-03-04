@@ -1,0 +1,392 @@
+/* CSS Variables */
+:root {
+  --primary-color: #ffcc00;
+  --secondary-color: #000000;
+  --background-color: #F8ED8C;
+  --text-color: #000000;
+  --gradient-start: #F8ED8C;
+  --gradient-end: #F8ED8C;
+}
+
+/* Global Reset and Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Global Black Text Styling */
+body, 
+h1, h2, h3, h4, h5, h6,
+p, 
+a, 
+li, 
+span, 
+div,
+.welcome-section p,
+.section p,
+.half-width p,
+.footer p {
+  color: #000000 !important;
+}
+
+/* Body Styles */
+body {
+  background: linear-gradient(to right, #F8ED8C, #F8ED8C);
+  background-attachment: fixed;
+  min-height: 100vh;
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+}
+
+/* Welcome Section Styles */
+.welcome-section {
+  background-color: #FFB200;
+  padding: 4rem 2rem;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  max-width: 1200px;
+  margin: 2rem auto;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Honeycomb Background Overlay */
+.welcome-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100' viewBox='0 0 56 100'%3E%3Cpath d='M28 66L0 50L0 16L28 0L56 16L56 50L28 66L28 100' fill='none' stroke='rgba(255,193,7,0.1)' stroke-width='2'/%3E%3C/svg%3E");
+  background-size: 56px 100px;
+  opacity: 0.3;
+  z-index: 0;
+}
+
+/* Single Bee Animation */
+.welcome-section::after {
+  content: "🐝";
+  position: absolute;
+  font-size: 2rem;
+  opacity: 0.7;
+  z-index: 1;
+  animation: singleBeeFly 10s infinite alternate ease-in-out;
+}
+
+/* Single Bee Flying Animation */
+@keyframes singleBeeFly {
+  0% {
+    top: 10%;
+    right: 10%;
+    transform: translate(0, 0) rotate(-15deg);
+  }
+  25% {
+    top: 30%;
+    right: 80%;
+    transform: translate(-50px, -30px) rotate(10deg);
+  }
+  50% {
+    top: 60%;
+    right: 20%;
+    transform: translate(40px, -20px) rotate(-20deg);
+  }
+  75% {
+    top: 40%;
+    right: 60%;
+    transform: translate(-30px, 30px) rotate(15deg);
+  }
+  100% {
+    top: 20%;
+    right: 40%;
+    transform: translate(20px, -40px) rotate(-10deg);
+  }
+}
+
+/* Section Container Styles */
+.section-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0;
+  gap: 20px;
+}
+
+/* Individual Section Styles */
+.section {
+  flex: 1;
+  min-width: 300px;
+  margin: 10px;
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 1px solid var(--primary-color);
+  border-radius: 6px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.section:hover {
+  transform: translateY(-5px);
+}
+
+/* Section Headings */
+.section h2 {
+  color: #000000 !important;
+  font-weight: bold;
+  margin-bottom: 10px;
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: 5px;
+}
+
+/* List Styles */
+.list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.list li {
+  background-color: var(--primary-color);
+  margin: 4px 0;
+  padding: 8px;
+  border-radius: 4px;
+  color: #000000 !important;
+  transition: background-color 0.3s ease;
+}
+
+.list li:hover {
+  background-color: #ffd633;
+}
+
+/* Side-by-Side Container */
+.side-by-side-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  gap: 20px;
+}
+
+.half-width {
+  width: 48%;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid var(--primary-color);
+  transition: all 0.3s ease;
+}
+
+.half-width:hover {
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transform: translateY(-5px);
+}
+
+/* Button Styles */
+.btn {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: #000000 !important;
+  padding: 10px 15px;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #ffd633;
+  color: #000000 !important;
+}
+
+/* Testimonial Styles */
+.testimonial {
+  font-style: italic;
+  color: #000000 !important;
+  border-left: 3px solid var(--primary-color);
+  padding-left: 8px;
+  margin: 8px 0;
+}
+
+/* Newsletter Form Styles */
+.newsletter-form {
+  display: flex;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.newsletter-form input {
+  flex-grow: 1;
+  padding: 10px;
+  margin-right: 10px;
+  border: 1px solid var(--primary-color);
+  border-radius: 4px;
+  color: #000000 !important;
+}
+
+.newsletter-form button {
+  background-color: var(--primary-color);
+  color: #000000 !important;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.newsletter-form button:hover {
+  background-color: #ffd633;
+}
+
+/* Footer Styles */
+.footer {
+  background-color: #1d1c1c;
+  color: var(--primary-color);
+  padding: 40px 0;
+  text-align: center;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.social-media, 
+.contact-section {
+  background-color: #444;
+  padding: 20px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.social-links a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #fff;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .welcome-section {
+    padding: 3rem 1.5rem;
+  }
+
+  .welcome-section h1 {
+    font-size: 2.25rem;
+  }
+
+  .welcome-section p {
+    font-size: 1.1rem;
+  }
+
+  .row,
+  .section-container {
+    flex-direction: column;
+  }
+
+  .half-width,
+  .section {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .footer-content {
+    flex-direction: column;
+  }
+
+  .social-media, 
+  .contact-section {
+    max-width: 90%;
+  }
+
+  .social-links {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .welcome-section {
+    padding: 2rem 1rem;
+  }
+
+  .welcome-section h1 {
+    font-size: 1.75rem;
+  }
+
+  .welcome-section p {
+    font-size: 1rem;
+  }
+}
+
+/* Gallery Styles */
+.gallery {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.gallery img {
+  width: 180px;
+  height: auto;
+  border-radius: 6px;
+  transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* Poll Form Styles */
+.poll-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.poll-form label {
+  margin: 8px 0;
+  color: #000000 !important;
+}
+
+.poll-form input[type="radio"] {
+  margin-right: 10px;
+}

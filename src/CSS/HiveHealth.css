@@ -1,0 +1,210 @@
+
+body {
+  font-family: "Times New Roman", Times, serif;
+  background-color: #fff3cd; /* Light Yellow */
+  margin: 0;
+  padding: 0;
+}
+
+/* Hive Health Container */
+.hive-health-container {
+  text-align: center;
+  padding: 20px;
+  color: black;
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: bold;
+  color: #000000;
+  text-shadow: 3px 3px 5px #ffc300;
+  border-bottom: 5px solid #000000;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+/* Hive Health Status */
+.hive-health-status h2 {
+  font-size: 28px;
+  font-weight: bold;
+  color: #000;
+  margin-top: 40px;
+}
+
+/* Health Status Colors */
+.critical {
+  color: red;
+  font-weight: bold;
+}
+
+.warning {
+  color: orange;
+  font-weight: bold;
+}
+
+.healthy {
+  color: green;
+  font-weight: bold;
+}
+
+/* Sensor Data Boxes */
+.sensor-boxes {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.sensor-box {
+  background: #fff;
+  border: 3px solid #000000;
+  margin-right: 10px;
+  padding: 15px;
+  border-radius: 15px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+  width: 130px;
+  height: 80px;
+}
+
+.sensor-box:hover {
+  transform: scale(1.1);
+  background-color: #ffcc00;
+}
+
+.sensor-box p {
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+}
+
+.sensor-box h3 {
+  font-size: 22px;
+  font-weight: bold;
+  color: #000000;
+}
+
+/* Charts Section */
+.chart {
+  background: #fff3cd;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+  margin: 20px auto;
+  max-width: 800px;
+  width: 800px;
+  height: 550px;
+}
+.chart h2 {
+  color: #000;
+}
+
+.chart-container {
+  width: 100%;
+  height: 300px;
+}
+.live-monitoring {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.metric-box {
+  background: white;
+  padding: 15px 20px;
+  border-radius: 10px;
+  border: 2px solid black;
+  text-align: center;
+  width: 150px;
+  font-size: 16px;
+  font-weight: bold;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease-in-out;
+}
+.metric-box p{
+  color: black;
+}
+
+.metric-box:hover {
+  transform: scale(1.05);
+}
+
+.metric-box p {
+  margin: 5px 0;
+}
+.optimization-tips, .disease-detection, .community-forum {
+  background-color: #ffcc00; /* Bright honey yellow */
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+  margin: 15px auto;
+  text-align: center;
+  width: 60%; /* Reduced width */
+  border: 3px solid #222; /* Black border for contrast */
+}
+
+.optimization-tips h2, 
+.disease-detection h2, 
+.community-forum h2 {
+  font-weight: bold;
+  color: #222; /* Dark text for better readability */
+}
+.optimization-tips p, 
+.disease-detection p, 
+.community-forum p{
+  color: black;
+}
+
+.optimization-tips {
+  border-left: 8px solid #ff9900; /* Deep honey orange */
+}
+
+.disease-detection {
+  border-left: 8px solid #ff3333; /* Red for alert */
+}
+
+.community-forum {
+  border-left: 8px solid #007bff; /* Blue for engagement */
+}
+
+.community-forum button {
+  background-color: #222; /* Black button for contrast */
+  color: #ffcc00; /* Yellow text */
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.community-forum button:hover {
+  background-color: #444; /* Darker shade on hover */
+}
+/* Apply Flexbox to arrange sections horizontally */
+.hive-health-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Parent div for bottom sections */
+.bottom-sections {
+  display: flex;
+  justify-content: space-around; /* Adjust spacing */
+  flex-wrap: wrap; /* Ensure responsiveness */
+  width: 100%;
+  margin-top: 20px;
+
+}
+
+/* Individual box styling */
+.optimization-tips, .disease-detection, .community-forum {
+  width: 30%; /* Adjust width */
+  background-color: #fef7dc; /* Bee theme */
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 2px 2px 5px black;
+}
